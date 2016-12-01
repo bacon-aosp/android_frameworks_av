@@ -997,13 +997,6 @@ sp<MediaCodecSource> StagefrightRecorder::createAudioSource() {
 
     sp<MediaCodecSource> audioEncoder =
             MediaCodecSource::Create(mLooper, format, audioSource);
-    // If encoder could not be created (as in LPCM), then
-    // use the AudioSource directly as the MediaSource.
-    if (audioEncoder == NULL &&
-        mAudioEncoder == AUDIO_ENCODER_LPCM) {
-        ALOGD("No encoder is needed for linear PCM format");
-        audioEncoder = audioSource;
-    }
     mAudioSourceNode = audioSource;
 
     if (audioEncoder == NULL) {
