@@ -39,6 +39,9 @@ extern "C" {
 #define BUNDLE_MEM_USAGE           25     // Expressed in kB
 //#define LVM_PCM
 
+// Maximum command/reply size expected
+#define EFFECT_PARAM_SIZE_MAX       65536
+
 #ifndef OPENSL_ES_H_
 static const effect_uuid_t SL_IID_VOLUME_ = { 0x09e8ede0, 0xddde, 0x11db, 0xb4f6,
                                             { 0x00, 0x02, 0xa5, 0xd5, 0xc5, 0x1b } };
